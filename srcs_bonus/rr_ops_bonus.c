@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr_ops.c                                           :+:      :+:    :+:   */
+/*   rr_ops_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:50:03 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/09 17:05:34 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:47:46 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 void	rra(int *stack, t_stru *mem)
 {
@@ -25,7 +25,6 @@ void	rra(int *stack, t_stru *mem)
 		counter++;
 	}
 	stack[mem->stack - 1] = aux;
-	write(1, "rra\n", 4);
 }
 
 void	rrb(int *temp, t_stru *mem)
@@ -41,7 +40,6 @@ void	rrb(int *temp, t_stru *mem)
 		counter++;
 	}
 	temp[mem->temp - 1] = aux;
-	write(1, "rrb\n", 4);
 }
 
 void	rrr(int *stack, int *temp, t_stru *mem)
@@ -65,5 +63,4 @@ void	rrr(int *stack, int *temp, t_stru *mem)
 		counter++;
 	}
 	temp[mem->temp - 1] = aux;
-	write(1, "rrr\n", 4);
 }

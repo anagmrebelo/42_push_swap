@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_large.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:29:36 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/29 12:32:17 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:23:04 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 int	check_position(int *stack, int i, t_stru *mem)
 {

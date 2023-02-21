@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:06:00 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/29 19:26:37 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:47:49 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	initialize_stru(t_stru *mem, int argc)
 {
@@ -45,6 +45,32 @@ int	main(int argc, char *argv[])
 	mem->stack = argc - 1;
 	if (!duplicate_check(argc, stack, temp, mem))
 		return (1);
+	sort(stack, temp, mem);
 	free_stacks(stack, temp, mem);
 	return (0);
+}
+
+void	sort(int *stack, int *temp, t_stru *mem)
+{
+	int	i;
+
+	if (is_sorted(stack, mem->max))
+		return ;
+	i = -1;
+	while (++i < mem->max)
+		temp[i] = check_position(stack, i, mem);
+	ft_memcpy(stack, temp, mem->max * sizeof(int));
+	if (mem->max == 2)
+	{
+		sa(stack, mem);
+		return ;
+	}
+	else if (mem->max == 3)
+		sort_small_nb(stack, temp, mem);
+	else if (mem->max == 4)
+		sort_four(stack, temp, mem);
+	else if (mem->max == 5)
+		sort_five(stack, temp, mem);
+	else
+		sort_large_nb(stack, temp, mem);
 }

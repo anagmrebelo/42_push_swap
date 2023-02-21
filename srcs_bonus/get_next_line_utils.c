@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:51:28 by arebelo           #+#    #+#             */
-/*   Updated: 2022/02/07 16:38:37 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:47:36 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/push_swap.h"
+
+#include "push_swap.h"
 
 unsigned long	counter(char *buf, int j)
 {
@@ -49,13 +50,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char			*ptr;
-	unsigned long	counter;
 	unsigned long	size;
 	char			*temp;
 
 	temp = ft_strndup(s1, ft_strlen(s1));
 	free(s1);
-	counter = 0;
 	if (!s1 || !s2)
 		return (0);
 	size = ft_strlen(temp) + ft_strlen(s2);

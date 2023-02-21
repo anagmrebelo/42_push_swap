@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   r_ops.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:05:44 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/09 17:05:47 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:23:04 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 void	ra(int *stack, t_stru *mem)
 {

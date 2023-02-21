@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small_nb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:28:50 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/29 18:46:17 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:23:04 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 void	sort_small_nb(int *stack, int *temp, t_stru *mem)
 {

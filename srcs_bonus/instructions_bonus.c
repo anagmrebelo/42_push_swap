@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   instructions_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 10:52:34 by arebelo           #+#    #+#             */
-/*   Updated: 2022/04/04 11:29:03 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:47:46 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 _Bool	instructions(char *inst, int *stack, int *temp, t_stru *mem)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rr_ops.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:50:03 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/29 19:27:25 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:23:04 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	rra(int *stack, t_stru *mem)
 {
@@ -25,6 +25,7 @@ void	rra(int *stack, t_stru *mem)
 		counter++;
 	}
 	stack[mem->stack - 1] = aux;
+	write(1, "rra\n", 4);
 }
 
 void	rrb(int *temp, t_stru *mem)
@@ -40,6 +41,7 @@ void	rrb(int *temp, t_stru *mem)
 		counter++;
 	}
 	temp[mem->temp - 1] = aux;
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(int *stack, int *temp, t_stru *mem)
@@ -63,4 +65,5 @@ void	rrr(int *stack, int *temp, t_stru *mem)
 		counter++;
 	}
 	temp[mem->temp - 1] = aux;
+	write(1, "rrr\n", 4);
 }

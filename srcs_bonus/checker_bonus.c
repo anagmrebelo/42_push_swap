@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:06:00 by arebelo           #+#    #+#             */
-/*   Updated: 2022/03/29 19:42:59 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/02/22 00:47:46 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 void	initialize_stru(t_stru *mem, int argc)
 {
@@ -21,6 +21,34 @@ void	initialize_stru(t_stru *mem, int argc)
 	mem->tracker = 0;
 }
 
+static void	verify_bonus(int *stack, int *temp, t_stru *mem)
+{
+	char	*nl;
+
+	nl = get_next_line(0);
+	if (nl && is_sorted(stack, mem->max))
+	{
+		write(2, "Error\n", 6);
+		free(nl);
+		return ;
+	}
+	while (nl)
+	{
+		if (instructions(nl, stack, temp, mem))
+		{
+			write(2, "Error\n", 6);
+			free(nl);
+			return ;
+		}
+		free(nl);
+		nl = get_next_line(0);
+	}
+	if (is_sorted(stack, mem->max) && !mem->temp)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}
+
 int	main(int argc, char *argv[])
 {
 	static int	i;
@@ -28,7 +56,7 @@ int	main(int argc, char *argv[])
 	int			*temp;
 	t_stru		*mem;
 
-	if (argc < 1)
+	if (argc < 2)
 		return (1);
 	stack = (int *)ft_calloc((argc - 1), sizeof(int));
 	temp = (int *)ft_calloc((argc - 1), sizeof(int));
@@ -45,32 +73,7 @@ int	main(int argc, char *argv[])
 	mem->stack = argc - 1;
 	if (!duplicate_check(argc, stack, temp, mem))
 		return (1);
-	sort(stack, temp, mem);
+	verify_bonus(stack, temp, mem);
 	free_stacks(stack, temp, mem);
 	return (0);
-}
-
-void	sort(int *stack, int *temp, t_stru *mem)
-{
-	int	i;
-
-	if (is_sorted(stack, mem->max))
-		return ;
-	i = -1;
-	while (++i < mem->max)
-		temp[i] = check_position(stack, i, mem);
-	ft_memcpy(stack, temp, mem->max * sizeof(int));
-	if (mem->max == 2)
-	{
-		sa(stack, mem);
-		return ;
-	}
-	else if (mem->max == 3)
-		sort_small_nb(stack, temp, mem);
-	else if (mem->max == 4)
-		sort_four(stack, temp, mem);
-	else if (mem->max == 5)
-		sort_five(stack, temp, mem);
-	else
-		sort_large_nb(stack, temp, mem);
 }
