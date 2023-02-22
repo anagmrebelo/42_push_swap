@@ -10,4 +10,4 @@ Bonus consisted of creating a "checker" program that guarantees proper functioni
 ## Usage
 
 ```make``` without bonus functions\
-```make bonus``` to compile with bonus
+```make bonus``` to compile bonus checker
